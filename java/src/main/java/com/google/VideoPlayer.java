@@ -28,6 +28,7 @@ public class VideoPlayer {
   public void showAllVideos() {
     System.out.println("Here's a list of all available videos:");
     List<Video> videosList = videoLibrary.getVideos();
+    //sort in lexicographical order by title
     videosList.sort((v1, v2) -> v1.getTitle().compareTo(v2.getTitle()));
     for(Video v: videosList)
     {
@@ -187,6 +188,7 @@ public class VideoPlayer {
     boolean exist = false;
     for(VideoPlaylist vPlaylist: videoPlayLists)
     {
+      //ignore case sensitive
       if(vPlaylist.getTitle().equalsIgnoreCase(playlistName))
       {
         exist = true;
@@ -199,7 +201,8 @@ public class VideoPlayer {
     VideoPlaylist selectedVideoPlaylist = null;
     for(VideoPlaylist vPlaylist: videoPlayLists)
     {
-      if(vPlaylist.getTitle().toLowerCase().equals(playlistName.toLowerCase()))
+      //ignore case sensitive
+      if(vPlaylist.getTitle().equalsIgnoreCase(playlistName))
       {
         selectedVideoPlaylist = vPlaylist;
       }
