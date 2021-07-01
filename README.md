@@ -1,0 +1,2 @@
+# BrightNetworkWorkSample
+Google Coding Challenge
